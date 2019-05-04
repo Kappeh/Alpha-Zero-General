@@ -36,10 +36,10 @@ class Tictactoe_Game(Game):
     def winner(self, state_history):
         return state_history[-1].winner
     
-    def board_tensor(self, state):
-        return state.board_tensor()
+    def board_tensor(self, state, player = None):
+        return state.board_tensor(player)
 
-    def status_tensor(self, state):
+    def status_tensor(self, state, player = None):
         return None
 
     def copy(self, state):

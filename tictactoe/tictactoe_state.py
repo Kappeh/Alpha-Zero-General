@@ -23,12 +23,12 @@ class Tictactoe_State:
 
         self.zobrist = Hash(9, 2)
 
-    def board_tensor(self):
+    def board_tensor(self, player):
         result = np.zeros([2, 3, 3])
         for i, v in enumerate(self.tiles):
             if v == 0:
                 continue
-            index = 0 if v == self.current_player else 1
+            index = 0 if v == player else 1
             result[index, i % 3, i // 3] = 1
         return result
     

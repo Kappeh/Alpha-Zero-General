@@ -35,10 +35,10 @@ class Game:
     def winner(self, state_history):
         pass
     
-    def board_tensor(self, state):
+    def board_tensor(self, state, player = None):
         pass
 
-    def status_tensor(self, state):
+    def status_tensor(self, state, player = None):
         pass
 
     def copy(self, state):
