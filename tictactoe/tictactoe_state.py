@@ -58,10 +58,15 @@ class Tictactoe_State:
     def check_winner(self):
         for i in range(0, 24, 3):
             index = i
+            win = True
             for j in range(3):
                 if self.tiles[self.LINES[index]] != self.player:
-                    continue
+                    win = False
+                    break
                 index += 1
+
+            if win == False:
+                continue
 
             self.winner = self.player
             return self.winner
@@ -90,7 +95,7 @@ class Tictactoe_State:
         return self.winner is not None
 
     def copy(self):
-        result = Board()
+        result = Tictactoe_State()
         
         result.tiles = np.copy(self.tiles)
         result.player = self.player
