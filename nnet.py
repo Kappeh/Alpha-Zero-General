@@ -6,7 +6,7 @@ class NNet:
     def train(self, training_data):
         pass
 
-    def predict(self, state):
+    def predict(self, state_history):
         pass
     
     def save_checkpoint(self, folder, filename):
