@@ -14,18 +14,18 @@ class Play:
         self.current_state = self.game.starting_state()
         self.state_history = [self.game.copy(self.current_state)]
 
-        while not self.game.game_finished(self.current_state):
+        while not self.game.game_finished(self.state_history):
 
-            if self.game.current_player(self.current_state) == Game.PLAYER_1:
-                action = self.player_1.get_action(self.current_state)
-                self.current_state = self.game.next_state(self.current_state, action)
+            if self.game.current_player(self.state_history) == Game.PLAYER_1:
+                action = self.player_1.get_action(self.state_history)
+                self.current_state = self.game.next_state(self.state_history, action)
             else:
-                action = self.player_2.get_action(self.current_state)
-                self.current_state = self.game.next_state(self.current_state, action)
+                action = self.player_2.get_action(self.state_history)
+                self.current_state = self.game.next_state(self.state_history, action)
             
             self.state_history.append(self.game.copy(self.current_state))
         
-        return self.game.winner(self.current_state)
+        return self.game.winner(self.state_history)
     
     def play_games(self, n):
         player_1_win    = 0

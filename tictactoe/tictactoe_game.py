@@ -17,24 +17,24 @@ class Tictactoe_Game(Game):
     def starting_state(self):
         return Tictactoe_State()
     
-    def current_player(self, state):
-        return state.player
+    def current_player(self, state_history):
+        return state_history[-1].player
 
-    def legal_actions(self, state, one_hot = False):
-        return state.legal_actions(one_hot = one_hot)
+    def legal_actions(self, state_history, one_hot = False):
+        return state_history[-1].legal_actions(one_hot = one_hot)
 
-    def legal_action(self, state, action):
-        return state.legal_action(action)
+    def legal_action(self, state_history, action):
+        return state_history[-1].legal_action(action)
 
-    def next_state(self, state, action):
-        result = state.copy()
+    def next_state(self, state_history, action):
+        result = state_history[-1].copy()
         return result.apply_action(action)
     
-    def game_finished(self, state):
-        return state.game_finished()
+    def game_finished(self, state_history):
+        return state_history[-1].game_finished()
     
-    def winner(self, state):
-        return state.winner
+    def winner(self, state_history):
+        return state_history[-1].winner
     
     def board_tensor(self, state):
         return state.board_tensor()
@@ -61,4 +61,3 @@ class Tictactoe_Game(Game):
 
     def hash(self, state):
         return hash(state)
-    

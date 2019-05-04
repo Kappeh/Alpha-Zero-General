@@ -17,22 +17,22 @@ class Game:
     def starting_state(self):
         pass
     
-    def current_player(self, state):
+    def current_player(self, state_history):
         pass
 
-    def legal_actions(self, state, one_hot = False):
+    def legal_actions(self, state_history, one_hot = False):
         pass
 
-    def legal_action(self, state, action):
+    def legal_action(self, state_history, action):
         pass
 
-    def next_state(self, state, action):
+    def next_state(self, state_history, action):
         pass
     
-    def game_finished(self, state):
+    def game_finished(self, state_history):
         pass
     
-    def winner(self, state):
+    def winner(self, state_history):
         pass
     
     def board_tensor(self, state):

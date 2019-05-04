@@ -7,5 +7,5 @@ class Player:
     def get_name(self):
         return self.name
 
-    def get_action(self, state):
+    def get_action(self, state_history):
         pass
