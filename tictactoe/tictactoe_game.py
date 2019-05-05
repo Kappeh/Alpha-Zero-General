@@ -17,8 +17,8 @@ class Tictactoe_Game(Game):
     def starting_state(self):
         return Tictactoe_State()
     
-    def current_player(self, state_history):
-        return state_history[-1].player
+    def current_player(self, state):
+        return state.player
 
     def legal_actions(self, state_history, one_hot = False):
         return state_history[-1].legal_actions(one_hot = one_hot)

@@ -17,7 +17,7 @@ class Game:
     def starting_state(self):
         pass
     
-    def current_player(self, state_history):
+    def current_player(self, state):
         pass
 
     def legal_actions(self, state_history, one_hot = False):

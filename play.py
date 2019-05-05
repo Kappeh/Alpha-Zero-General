@@ -16,7 +16,7 @@ class Play:
 
         while not self.game.game_finished(self.state_history):
 
-            if self.game.current_player(self.state_history) == Game.PLAYER_1:
+            if self.game.current_player(self.current_state) == Game.PLAYER_1:
                 action = self.player_1.get_action(self.state_history)
                 self.current_state = self.game.next_state(self.state_history, action)
             else:
