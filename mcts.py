@@ -96,13 +96,10 @@ class MCTS:
         # V is from the root player's perspective
         v = None
         if self.game.game_finished(history_copy):
-            v = int(root_player == self.game.winner(history_copy))
+            v = root_player * self.game.winner(history_copy)    
         else:
             v, _ = self.nnet.predict(history_copy, root_player)
-            v = (v + 1) / 2
-
-        #print(self.game.string(history_copy[-1]), v)
-        #input()
+        v = (v + 1) / 2
 
         for a, s, k, p in visited:
             self.plays[k] += 1
