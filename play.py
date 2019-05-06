@@ -9,7 +9,7 @@ class Play:
 
         self.current_state = None
         self.state_history = None
-    
+
     def play_game(self):
         self.current_state = self.game.starting_state()
         self.state_history = [self.game.copy(self.current_state)]
@@ -24,7 +24,7 @@ class Play:
                 self.current_state = self.game.next_state(self.state_history, action)
             
             self.state_history.append(self.game.copy(self.current_state))
-        
+
         return self.game.winner(self.state_history)
     
     def play_games(self, n):
